@@ -7,35 +7,52 @@ const confrimPassword = document.getElementById("confirmPassword");
 // Event Listners
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log(username.value);
+  checkRequires([userName, email, password, confrimPassword]);
 
-  if (username.value === "") {
-    showError(username, "Username is required");
-  } else {
-    showSuccess(username);
-  }
+  //   if (username.value === "") {
+  //     showError(username, "Username is required");
+  //   } else {
+  //     showSuccess(username);
+  //   }
 
-  if (email.value === "") {
-    showError(email, "email is required");
-  } else if (!isValidEmail(email)) {
-    showError(email, "email is not valid");
+  //   if (email.value === "") {
+  //     showError(email, "email is required");
+  //   } else if (!isValidEmail(email)) {
+  //     showError(email, "email is not valid");
 
-  } else {
-    showSuccess(email);
-  }
+  //   } else {
+  //     showSuccess(email);
+  //   }
 
-  if (password.value === "") {
-    showError(password, "password is required");
-  } else {
-    showSuccess(password);
-  }
+  //   if (password.value === "") {
+  //     showError(password, "password is required");
+  //   } else {
+  //     showSuccess(password);
+  //   }
 
-  if (confrimPassword.value === "") {
-    showError(confrimPassword, "confrim Password ");
-  } else {
-    showSuccess(confrimPassword);
-  }
+  //   if (confrimPassword.value === "") {
+  //     showError(confrimPassword, "confrim Password ");
+  //   } else {
+  //     showSuccess(confrimPassword);
+  //   }
 });
+
+// check required fields
+function checkReuqired(inputArr) {
+  inputArr.forEach((input) => {
+    if (input.value.trim() == "") {
+      showError(input, `${getFieldName(input)} is required`);
+    } else {
+      showSuccess(input);
+    }
+  });
+}
+function getFieldName(input) {
+  if (input.id === "confirmPassword") {
+    return "confirm password";
+  }
+  return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+}
 
 // check password
 function isValidEmail(email) {
