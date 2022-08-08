@@ -1,35 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form Validator</title>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
     <div class="container">
-        <form action="">
-            <h1>Register with Us</h1>
+      <form id="'form" class="form">
+        <h1>Register with Us</h1>
 
-            <label for="username"> Username</label>
-            <input type="text" name="" id="username">
+        <div class="form-control">
+          <label for="username"> Username</label>
+          <input placeholder="Enter Username" type="text" id="username" />
+          <small>Error Message</small>
+        </div>
 
-            <label for="email"> Email</label>
-            <input id="email" type="email">
+        <div class="form-control">
+          <label for="email"> Email</label>
+          <input id="email" type="text" placeholder="Enter your email"  /> 
+          <small>Error Message</small>
 
-            <label for="password"> Password</label>
-            <input type="password" id="password">
+        </div>
 
-            <label for="confirmPassword"> Confirm Password</label>
-            <input type="password" name="" id="confirmPassword">
+        <div class="form-control">
+          <label for="password"> Password</label>
+          <input type="password" id="password" placeholder="Enter your password" />
+          <small>Error Message</small>
 
-            <input type="submit" value="Submit">
+        </div>
+        <div class="form-control">
+          <label for="confirmPassword"> Confirm Password</label>
+          <input type="password" name="" id="confirmPassword" placeholder="confirm Password" />
+          <small>Error Message</small>
 
-
-        </form>
-
-
+        </div>
+        <button>Submit</button>
+      </form>
     </div>
-    
-</body>
+    <script src="'Script.js"></script>
+  </body>
 </html>
