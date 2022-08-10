@@ -11,7 +11,7 @@ form.addEventListener("submit", (e) => {
   checkLength(username, 3, 15);
   checkLength(password, 6, 25);
   isValidEmail(email.input);
-  checkPasswordsMatch(password,confrimPassword)
+  checkPasswordsMatch(password, confrimPassword);
 
   //   if (username.value === "") {
   //     showError(username, "Username is required");
@@ -103,8 +103,8 @@ function checkLength(input, min, max) {
   }
 }
 
-function checkPasswordsMatch(input1, input2){
-    if(input1.value !== input2.value){
-        showError(input2, "passwords do not match")
-    }
+function checkPasswordsMatch(input1, input2) {
+  if (input1.value !== input2.value) {
+    showError(input2, "passwords do not match");
+  }
 }
